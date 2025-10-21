@@ -7,9 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  test:
+    name: Test on Python ${{ matrix.python-version }}
     runs-on: ubuntu-latest
-
     strategy:
       fail-fast: false
       matrix:
@@ -21,9 +21,9 @@ jobs:
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
+      id: setup-python
       with:
         python-version: ${{ matrix.python-version }}
-        id: setup-python
 
     - name: Install Poetry
       uses: snok/install-poetry@v1
@@ -49,3 +49,4 @@ jobs:
 
     - name: Run Tests
       run: poetry run pytest
+
