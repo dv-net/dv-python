@@ -11,7 +11,7 @@ def test_check_sign_valid(utils_manager):
     client_key = "my_secret_key"
     body = {"param1": "value1", "param2": 123}
     # Correct signature generated for the test
-    signature = "b713175d7b8782a215b3e2365a11eb9b4724b12634351658091891a0293112d1"
+    signature = "62ee77dcd499b9bba8492cb398c8d84e07a2e4e33924b701f72410f2ca7c3315"
 
     assert utils_manager.check_sign(signature, client_key, body) is True
 

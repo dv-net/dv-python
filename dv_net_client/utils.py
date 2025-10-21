@@ -1,4 +1,5 @@
 import hashlib
+import hmac
 import json
 from typing import Any, Dict, Union
 from urllib.parse import urlencode
@@ -18,8 +19,7 @@ class MerchantUtilsManager:
 
         calculated_hash = hashlib.sha256(message.encode('utf-8')).hexdigest()
 
-        return hashlib.sha256(client_signature.encode()).hexdigest() == hashlib.sha256(
-            calculated_hash.encode()).hexdigest()
+        return hmac.compare_digest(calculated_hash, client_signature)
 
     def generate_link(self, host: str, store_uuid: str, client_id: str, email: str) -> str:
         query_params = urlencode({'email': email})
