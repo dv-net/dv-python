@@ -3,7 +3,7 @@ from typing import Any, Dict, Optional, Tuple, Type, TypeVar, Union
 from .dto import merchant_client as mc_dto
 from .exceptions import (
     DvNetInvalidResponseDataException, DvNetUndefinedHostException,
-    DvNetUndefinedXApiKeyException, DvNetException
+    DvNetUndefinedXApiKeyException
 )
 from .mappers import MerchantMapper
 
@@ -69,4 +69,3 @@ class BaseMerchantClient:
 
         except (KeyError, TypeError) as e:
             raise DvNetInvalidResponseDataException(f"Failed to map response data: {e}") from e
-

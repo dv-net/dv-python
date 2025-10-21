@@ -117,4 +117,3 @@ class AiohttpHttpClient:
             raise DvNetNetworkException("Request timed out") from e
         except self.aiohttp.ClientError as e:
             raise DvNetNetworkException(f"Aiohttp client error: {e}") from e
-

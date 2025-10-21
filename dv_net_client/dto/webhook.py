@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 
+
 @dataclass
 class TransactionDto:
     tx_id: str
@@ -13,10 +14,12 @@ class TransactionDto:
     amount: str
     amount_usd: str
 
+
 @dataclass
 class WalletDto:
     id: str
     store_external_id: str
+
 
 @dataclass
 class ConfirmedWebhookResponse:
@@ -28,6 +31,7 @@ class ConfirmedWebhookResponse:
     transactions: TransactionDto
     wallet: WalletDto
 
+
 @dataclass
 class UnconfirmedWebhookResponse:
     type: str
@@ -38,6 +42,7 @@ class UnconfirmedWebhookResponse:
     transactions: TransactionDto
     wallet: WalletDto
 
+
 @dataclass
 class WithdrawalWebhookResponse:
     type: str
@@ -46,4 +51,3 @@ class WithdrawalWebhookResponse:
     amount: str
     transactions: TransactionDto
     withdrawal_id: str
-

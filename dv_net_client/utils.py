@@ -24,4 +24,3 @@ class MerchantUtilsManager:
     def generate_link(self, host: str, store_uuid: str, client_id: str, email: str) -> str:
         query_params = urlencode({'email': email})
         return f"{host}/{store_uuid}/{client_id}?{query_params}"
-

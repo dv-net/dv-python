@@ -2,7 +2,6 @@ from typing import Dict, List, Optional, Any
 
 from ._base_client import BaseMerchantClient
 from .dto import merchant_client as mc_dto
-from .exceptions import DvNetException
 from .http_client import AsyncHttpClient, AiohttpHttpClient
 from .mappers import MerchantMapper
 
@@ -138,4 +137,3 @@ class AsyncMerchantClient(BaseMerchantClient):
         uri = f"{host}/api/v1/external/withdrawal-from-processing/{withdrawal_id}"
         headers = {'x-api-key': x_api_key}
         await self._send_request('DELETE', uri, headers=headers)
-

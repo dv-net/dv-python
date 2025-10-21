@@ -1,0 +1,13 @@
+{
+  "amount": "100",
+  "created_at": "2025-01-31T07:21:32.292335Z",
+  "paid_at": "2025-01-31T07:21:32.292335Z",
+  "status": "completed",
+  "transactions": {
+    "no": "transaction"
+  },
+  "wallet": {
+    "id": "e24e5539-e207-4536-b529-06e2bccc187c",
+    "store_external_id": "store_external_example"
+  }
+}

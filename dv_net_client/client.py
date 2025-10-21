@@ -137,4 +137,3 @@ class MerchantClient(BaseMerchantClient):
         uri = f"{host}/api/v1/external/withdrawal-from-processing/{withdrawal_id}"
         headers = {'x-api-key': x_api_key}
         self._send_request('DELETE', uri, headers=headers)
-

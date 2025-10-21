@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Any, Dict, List
 
 from .dto import merchant_client as mc_dto, webhook as wh_dto
-from .exceptions import DvNetInvalidResponseDataException, DvNetInvalidWebhookException
+from .exceptions import DvNetInvalidWebhookException
 
 
 def _parse_datetime(dt_str: Any) -> datetime:
@@ -264,4 +264,3 @@ class WebhookMapper:
             transactions=self._make_transaction(data['unconfirmed_transactions'], 'unconfirmed_'),
             wallet=self._make_wallet(data['unconfirmed_wallet'], 'unconfirmed_'),
         )
-

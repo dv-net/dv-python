@@ -2,12 +2,14 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Optional
 
+
 @dataclass
 class CurrencyShortDto:
     id: str
     code: str
     name: str
     blockchain: str
+
 
 @dataclass
 class AccountDto:
@@ -16,6 +18,7 @@ class AccountDto:
     count: int
     count_with_balance: int
     currency: CurrencyShortDto
+
 
 @dataclass
 class AddressDto:
@@ -27,16 +30,19 @@ class AddressDto:
     address: str
     dirty: bool
 
+
 @dataclass
 class AssetDto:
     identity: str
     amount: str
     amount_usd: str
 
+
 @dataclass
 class BalanceDto:
     native_token: str
     native_token_usd: str
+
 
 @dataclass
 class TronDataDto:
@@ -52,15 +58,18 @@ class TronDataDto:
     total_used_bandwidth: str
     total_used_energy: str
 
+
 @dataclass
 class BlockchainAdditionalDataDto:
     tron_data: TronDataDto
+
 
 @dataclass
 class IconDto:
     icon_128: str
     icon_512: str
     icon_svg: str
+
 
 @dataclass
 class CurrencyDto:
@@ -79,11 +88,13 @@ class CurrencyDto:
     withdrawal_min_balance: str
     explorer_link: str
 
+
 @dataclass
 class ExchangeBalanceDto:
     amount: str
     amount_usd: str
     currency: str
+
 
 @dataclass
 class ProcessingWalletBalanceDto:
@@ -94,22 +105,25 @@ class ProcessingWalletBalanceDto:
     balance: BalanceDto
     additional_data: Optional[BlockchainAdditionalDataDto]
 
+
 @dataclass
 class TransferDto:
     kind: str
     stage: str
     status: str
 
-# Responses
+
 @dataclass
 class CurrenciesResponse:
     currencies: List[CurrencyDto]
+
 
 @dataclass
 class CurrencyRateResponse:
     code: str
     rate: str
     rate_source: str
+
 
 @dataclass
 class ExternalAddressesResponse:
@@ -123,9 +137,11 @@ class ExternalAddressesResponse:
     rates: List[str]
     amount_usd: str
 
+
 @dataclass
 class ProcessingWalletsBalancesResponse:
     balances: List[ProcessingWalletBalanceDto]
+
 
 @dataclass
 class ProcessingWithdrawalResponse:
@@ -139,10 +155,12 @@ class ProcessingWithdrawalResponse:
     transfer: Optional[TransferDto]
     tx_hash: str
 
+
 @dataclass
 class TotalExchangeBalanceResponse:
     total_usd: str
     exchange_balance: List[ExchangeBalanceDto]
+
 
 @dataclass
 class WithdrawalResponse:
@@ -155,4 +173,3 @@ class WithdrawalResponse:
     id: str
     store_id: str
     transfer_id: Optional[str]
-
