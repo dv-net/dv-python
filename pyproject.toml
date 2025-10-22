@@ -1,10 +1,13 @@
 [tool.poetry]
 name = "dv-net-client"
-version = "0.1.0"
+version = "1.0.0"
 description = "A convenient way to integrate DV.net to your platform"
 authors = ["Kurt Morgan <kurt.morgan@dv.net>"]
 license = "MIT"
 readme = "README.md"
+homepage = "https://docs.dv.net"
+repository = "https://github.com/dv-net/dv-python"
+keywords = ["api", "client", "dv.net", "payment", "crypto"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
